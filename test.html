@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	
 
 	<style type="text/css">
 		.search_bar{
-			/*background-color: #ccc;*/
 			text-align: center;
 			padding: 4px;
+			border-radius: px;
+			padding-left: px;
 		}
 		.input_panel{
-			padding-left: 1000px;
+			
 			padding-bottom: 10px;
+			border: 0px;
+			border-bottom-width: 1px;
+			border-top-color: white;
 		}
 		.button{
 			padding-bottom: 10px;
-		}
-		.list{
-			width: 40px;
-
 		}	
 		.box .chip{
 			padding: 11px 20px;
@@ -27,30 +33,80 @@
     		margin: 10px;
 			background-color: #eee;
 			cursor: pointer;
-
+			
 		}
+		.inline{
+			display: inline-block;
+			border: 1px solid red; 
+    		margin:10px;
+    		position: relative;
+		}
+		
 	</style>
 </head>
 <body>
 	<div class="search_bar">
 		<input class="input_panel" type="text" placeholder="Enter Service Request" name="search">
+		<hr>
 		<button class="button" type="submit">submit</button>
 	</div>
-	<span><p>please select your service</p></span>
+	<p>please select your service</p>
 	<br>
 	<div class="container">
 		<div class="box">
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
-			<span class="chip">ok</span>
+			
+
+			<div class="inline chip ">
+				<span name="new" class="cd" value="new">new</span>
+				<i class="fa fa-close close"></i>
+			</div>
+			<div class="inline chip ">
+				<span class="cd">new</span>
+				<i class="fa fa-close close"></i>
+			</div>
+			<div class="inline chip ">
+				<span class="cd">new</span>
+				<i class="fa fa-close close"></i>
+			</div>
+			<div class="inline chip ">
+				<span class="cd">new</span>
+				<i class="fa fa-close close"></i>
+			</div>
+			<div class="inline chip ">
+				<span class="cd">new</span>
+				<i class="fa fa-close close"></i>
+			</div>
+			
 		</div>
 	</div>
 
+
+
+
+
+
+	<div>
+		<input type="radio" name="new" value="new">new
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		$(function(){
+			$(".close").click(function(){
+				$(".inline").hide()
+				alert("hide hotoy")
+			})
+			$(".cd").click(function(){
+				$valu = $(this).val().toLowerCase();
+   				$(".box").filter(function(){
+				alert($valu)
+   				})
+		})
+
+
+	})
+	</script>
 </body>
 </html>
